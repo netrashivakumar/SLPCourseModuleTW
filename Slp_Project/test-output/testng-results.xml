@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="88982" started-at="2016-04-24T19:10:34Z" finished-at="2016-04-24T19:12:03Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="88982" started-at="2016-04-24T19:10:34Z" finished-at="2016-04-24T19:12:03Z">
+      <class name="com.org.Slp_Project.SLP2016_DriverTest">
+        <test-method status="PASS" signature="driverTest()[pri:0, instance:com.org.Slp_Project.SLP2016_DriverTest@76ed1b7c]" name="driverTest" duration-ms="88941" started-at="2016-04-24T15:10:34Z" finished-at="2016-04-24T15:12:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- driverTest -->
+      </class> <!-- com.org.Slp_Project.SLP2016_DriverTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
