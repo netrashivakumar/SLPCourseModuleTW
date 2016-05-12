@@ -21,13 +21,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 public class SLP2016_DriverTest {
-	//NDS Date - New New
+	//netra D Shivakumar - 05/12/2016
 	// Define global variables 
 	String vXLPath, vXLTC, vXLTS, vXLTD, vXLEM;
 	String vXLTSResPath, vXLTCResPath, vXLTDResPath;
 	int xTCRows, xTCCols, xTSRows, xTSCols, xTDRows, xTDCols, xEMCols, xEMRows; 
 	String[][] xTCData, xTSData, xTDData, xEMData;
-	//WebDriver myD;
+	
 	String vKW, vXP, vData;
 	String vResult, vError, vTCResult;
 	SLP_KeyWords Keys = new SLP_KeyWords();
@@ -35,10 +35,8 @@ public class SLP2016_DriverTest {
 	@Test
 	public void driverTest() throws Exception{
 		
-	// Define the webdriver
-	//	myD = new FirefoxDriver();
-	//	myD.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-	//	myD.get("http://test.atomic77.in/TWAv1/1");
+	// Define Excel Data Sources
+	
 		
 		vXLPath = "C:/NetraSLPData/NewSlpData/NewSLP_HBFW_Netra_032016.xlsx";
 		vXLTSResPath = "C:/NetraSLPData/NewSlpData/HF4TS_Res_";

@@ -20,8 +20,8 @@ public class SLP_KeyWords {
 
 	
 	public void enterText(String fXP, String fText){
-		// Purpose : It takes a webdriver and enters a text into it. 
-		// Inputs : Where to type (Xpath), What to type (text)
+		// Purpose : Webdriver and enters a text into text Field. 
+		// Inputs : Where to type (fXP), What to type (ftext)
 		// Output : No output
 		myD.findElement(By.xpath(fXP)).clear();
 		myD.findElement(By.xpath(fXP)).sendKeys(fText);
@@ -30,39 +30,38 @@ public class SLP_KeyWords {
 	
 	public void clickLink(String fLinkText) throws InterruptedException{
 	// Purpose : It clicks on a link 
-	// Inputs : Text of the link to click on.
+	// Inputs : fLinkText of the link to click on.
 	// Output : No output
 		myD.findElement(By.linkText(fLinkText)).click();
 		Thread.sleep(10000);
 	}
 	
 	public void getURL(String fURL){
-	// Purpose : Navigate to a URL in our Webdriver  
-	// Inputs : URL
+	// Purpose : Navigate to a fURL in our Webdriver  
+	// Inputs : fURL
 	// Output : No output
 		myD.get(fURL);
 	}
 	
 	public void navigateURL(String fURL){
-	// Purpose : Navigate to a URL in our Webdriver  
-	// Inputs : URL
+	// Purpose : Navigate to a fURL in our Webdriver  
+	// Inputs : fURL
 	// Output : No output
 		myD.navigate().to(fURL);
 	}
 	
 	public void clickElement(String fXP){
 	// Purpose : It clicks any element
-	// Inputs : xPath of the element to click on.
+	// Inputs : fXP of the element to click on.
 	// Output : No output
 		myD.findElement(By.xpath(fXP)).click();	
-	//	myD.findElement(By.linkText(fXP)).click();
-	//   myD.findElement(By.cssSelector(fXP)).click();
-	//   myD.findElement(ByClassName.className(fXP)).click();
-		
+			
 	}
 	public void clickLogin(String fXP) throws InterruptedException {
-	//	myD.findElement(By.cssSelector(fXP)).click();
-	//	 myD.findElement(ByClassName.className(fXP)).click();
+		// Purpose : It clicks on LoginButton
+		// Inputs : fXP of the element to click on.
+		// Output : No output
+	
 		 myD.findElement(By.cssSelector(fXP)).click();
 		// myD.wait(30);
 		Thread.sleep(5000);
@@ -70,14 +69,14 @@ public class SLP_KeyWords {
 	
 	public void hitEnter(String fXP){
 		// Purpose : Hits an enter over an element
-		// Inputs : xPath of the element to hit enter on
+		// Inputs :fXP of the element to hit enter on
 		// Output : No output
 			myD.findElement(By.xpath(fXP)).sendKeys(Keys.ENTER);
 	}
 	
 	public String verifyText(String fXP, String fText){
 		// Purpose : Verifies if a specific text is present on that element
-		// Inputs : xPath of the element and the text to verify
+		// Inputs : fXP of the element and the fText to verify
 		// Output : Pass or a Fail
 			String fTemp;
 			fTemp = myD.findElement(By.linkText(fXP)).getText();
@@ -92,8 +91,8 @@ public class SLP_KeyWords {
 			
 	}
 	public String verifyUpCaseLetter(String fXP, String fText){
-		// Purpose : Verifies if a specific text is present on that element
-		// Inputs : xPath of the element and the text to verify
+		// Purpose : Verifies uppercase letter
+		// Inputs : fXP of the element and the fText to verify
 		// Output : Pass or a Fail
 			String fTemp;
 			fTemp = myD.findElement(By.linkText(fXP)).getText();
@@ -114,8 +113,8 @@ public class SLP_KeyWords {
 			}
 	}
 	public String verifyElement(String fXP, String fText){
-		// Purpose : Verifies if a specific text is present on that element
-		// Inputs : xPath of the element and the text to verify
+		// Purpose : Verifies element present by css selector
+		// Inputs : fXP of the element and the text to verify
 		// Output : Pass or a Fail
 			String fTemp;
 		//	fTemp = myD.findElement(By.linkText(fXP)).getText();
@@ -130,17 +129,21 @@ public class SLP_KeyWords {
 			}
 		}
 	public void ConfirmYes() {
+		// Purpose : confirms "Yes" to alert message
+		// Inputs : None
+		// Output : None
 		Alert alt=myD.switchTo().alert();
 		//alt.dismiss();
 		alt.accept();
 	}
 	public String verifyNotText(String fXP, String fText){
-		// Purpose : Verifies if a specific text is present on that element
-		// Inputs : xPath of the element and the text to verify
+		// Purpose : Verifies Text Not Present
+		// Inputs : fXP of the element and the fText not present
 		// Output : Pass or a Fail
 			String fTemp;
 			fTemp = myD.findElement(By.linkText(fXP)).getText();
 		//	fTemp = myD.findElement(By.xpath(fXP)).getText();
+			System.out.println("fTemp Check --" + fTemp);
 			if (fTemp.isEmpty()){
 				return "Pass" ;
 			} else {
@@ -149,8 +152,8 @@ public class SLP_KeyWords {
 			
 	}
 	public String verifyElementPresent(String fXP, String fText){
-		// Purpose : Verifies if a specific text is present on that element
-		// Inputs : xPath of the element and the text to verify
+		// Purpose : Verifies if a specific text is present by xpath
+		// Inputs : fXP of the element and the fText to verify
 		// Output : Pass or a Fail
 			String fTemp, Vsrc;
 		//	fTemp = myD.findElement(By.linkText(fXP)).getText();
@@ -170,8 +173,8 @@ public class SLP_KeyWords {
 					}
 	}
 	public String verifyUIPresent(String fXP, String fText){
-		// Purpose : Verifies if a specific text is present on that element
-		// Inputs : xPath of the element and the text to verify
+		// Purpose : Verifies element present by css selector  
+		// Inputs : fXP of the element and the fText to verify
 		// Output : Pass or a Fail
 		//	String fTemp, Vsrc;
 		//	fTemp = myD.findElement(By.linkText(fXP)).getText();
@@ -184,10 +187,11 @@ public class SLP_KeyWords {
 			} else {
 				return "Fail" ;
 			}
-		}
+			
+	}
 	public String verifyUIXPthPresent(String fXP, String fText){
-		// Purpose : Verifies if a specific text is present on that element
-		// Inputs : xPath of the element and the text to verify
+		// Purpose : Verifies element present by Xpath  
+		// Inputs : fXP of the element and the fText to verify
 		// Output : Pass or a Fail
 		//	String fTemp, Vsrc;
 		//	fTemp = myD.findElement(By.linkText(fXP)).getText();
@@ -205,8 +209,8 @@ public class SLP_KeyWords {
 
 		
 	public void clickSubNewCourse(String fXP, String fText) throws IOException, InterruptedException{
-		// Purpose : It clicks any element
-		// Inputs : xPath of the element to click on.
+		// Purpose : Click Add New COurse Button
+		// Inputs : fXP of the element to click on.
 		// Output : No output
 		
 			myD.findElement(By.xpath(fXP)).click();	
@@ -219,8 +223,8 @@ public class SLP_KeyWords {
 			Thread.sleep(10000);
 	}
 	public void clickBigNewCourseIcon(String fXP, String fText) throws IOException, InterruptedException{
-		// Purpose : It clicks any element
-		// Inputs : xPath of the element to click on.
+		// Purpose : To Upload Icon 
+		// Inputs : fXP of the element to click on.
 		// Output : No output
 		
 			myD.findElement(By.xpath(fXP)).click();	
